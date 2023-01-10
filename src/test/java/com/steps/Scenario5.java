@@ -72,11 +72,18 @@ public class Scenario5 {
       driver.findElement(By.xpath("//button[@class='btn primary  lg block submitButton']")).click();
       Thread.sleep(34000);
       driver.findElement(By.xpath("//button[@class='btn primary  lg block submitButton']")).click();
-      driver.findElement(By.xpath("//span[@class='desktop-userTitle']")).click();
-      driver.findElement(By.xpath("//div[@class='desktop-accInfoSection']")).click();
+      Thread.sleep(4000);
+      
+//      driver.findElement(By.xpath("//span[@class='desktop-userTitle']")).click();
+//      driver.findElement(By.xpath("//*[@id=\"desktop-header-cnt\"]/div[2]/div[2]/div/div[2]/div[2]/div[2]/div[3]/a/div")).click();
+      driver.get("https://www.myntra.com/my/profile");
+      Thread.sleep(2000);
+      
+      
       String webpage = driver.findElement(By.xpath("//div[text()='Naman Deep Shamra']")).getText();
       String correct = "Naman Deep Shamra";
-      Assert.assertEquals(webpage, correct);
+      Assert.assertEquals(correct, webpage,"Account not found");
+      driver.close();
   }
   
 }
